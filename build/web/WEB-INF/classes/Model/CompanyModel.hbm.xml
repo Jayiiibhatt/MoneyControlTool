@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+   PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Model.CompanyModel" table="addcompany">
+        <id name="tinnumber" column="tinnumber" type="java.lang.Integer">
+            <generator class="assigned">
+                 
+            </generator>
+                
+                
+        </id>
+     <property name="companyname" column="companyname" type="java.lang.String"></property>
+     <property name="companyissuename" column="companyissuename" type="java.lang.String"></property>
+  
+     <property name="nominalvalue" column="nominalvalue" type="java.lang.Integer"></property>
+     <property name="netsale" column="netsale" type="java.lang.Integer"></property>
+     <property name="netprofit" column="netprofit" type="java.lang.Integer"></property>
+     <property name="netasset" column="netasset" type="java.lang.Integer"></property>
+     
+    
+     <set name="cmpnyrec" table="companyrecord" cascade="all" inverse="false">
+         <key >
+             <column name="companyissuename"/>
+         </key>
+         <one-to-many class="Model.CompanyRecord"/>
+     </set>
+     
+  <set name="companyexchangeregistration" table="companyregister" inverse="true" lazy="true" fetch="select">
+         <key >
+             <column name="tinnumber" not-null="true"/>
+         </key>
+         <one-to-many class="Model.CompanyExchangeRegistration"/>
+     </set>
+     </class>
+</hibernate-mapping>

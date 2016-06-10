@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+   PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+   
+   
+<hibernate-mapping>
+    <class name="Model.User" table="user">
+        <id name="user_id" column="user_id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        <property name="username" column="username" type="java.lang.String"/>
+        <property name="fname" column="first_name" type="java.lang.String"/>
+        <property name="mname" column="middle_name" type="java.lang.String"/>
+        <property name="lname" column="last_name" type="java.lang.String"/>
+        <property name="password" column="password" type="java.lang.String"/>
+        <property name="phno" column="phone_no" type="java.lang.String"/>
+        <property name="country" column="country" type="java.lang.String"/>
+        <property name="state" column="state" type="java.lang.String"/>
+        <property name="dist" column="district" type="java.lang.String"/>
+        <property name="street" column="street" type="java.lang.String"/>
+        <property name="city" column="city" type="java.lang.String"/>
+        <property name="gen" column="gender" type="java.lang.String"/>
+        <property name="pin_no" column="pin_no" type="java.lang.String"/>
+        <property name="date_of_birth" column="date_of_birth" type="java.lang.String"/>
+        <property name="type" column="type" type="java.lang.String"/>
+        <property name="allow"  type="java.lang.Integer"  >
+            <column name="allow" default="0"/>
+        </property>
+        
+        
+        <joined-subclass name="Model.Assistant" table="assistant">
+            <key column="assistant_id"/>
+            <property name="joining_date" column="joining_date" type="java.lang.String"/>
+            
+        </joined-subclass>
+        
+        <joined-subclass name="Model.ShareHolder" table="shareholder">
+            <key column="shareholder_id"/>
+            <property name="dmat" column="dmat" type="java.lang.String"/>
+            
+        </joined-subclass>
+        
+        <joined-subclass name="Model.Admin" table="admin">
+            <key column="admin_id"/>
+            <property name="accessright" column="accessright" type="java.lang.String"/>
+            
+        </joined-subclass>
+    </class>
+</hibernate-mapping>

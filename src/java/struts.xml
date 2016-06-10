@@ -1,0 +1,420 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <include file="example.xml"/>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        
+       <action name="Home" class="welcome.Welcome">
+            <result name="success">/MyshareDesign/Home.jsp</result>
+        </action>
+        
+        <action name="HomeViewer" class="Action.LoginAction" method="execute">
+            <result name="success">/MyshareDesign/Home.jsp</result>
+        </action>
+        
+         <action name="aboutus" class="Action.LoginAction" method="execute">
+            <result name="success">/MyshareDesign/AboutUs.jsp</result>
+        </action>
+        
+        <action name="contactus" class="Action.LoginAction" method="execute">
+            <result name="success">/MyshareDesign/ContactUs.jsp</result>
+        </action>
+        
+       <action name="registerhere" class="Action.LoginAction" method="execute">
+            <result name="success">/MyshareDesign/Registration.jsp</result>
+        </action>
+       
+       <action name="forgetpassword" class="Action.LoginAction" method="execute">
+            <result name="success">/MyshareDesign/ForgetPassword.jsp</result>
+        </action>
+       
+       
+       <action name="HomeAdmin" class="Action.LoginAction" method="execute">
+            <result name="success">/MyshareDesign/Admin/AdminDashboard.jsp</result>
+        </action>
+        
+        <action name="HomeAssistant" class="Action.LoginAction" method="execute">
+            <result name="success">/MyshareDesign/Assistant/AssistantPanel.jsp</result>
+        </action>
+        
+        <action name="HomeShareholder" class="Action.LoginAction" method="execute">
+            <result name="success">/MyshareDesign/ShareHolder/ShareHolderPanel.jsp</result>
+        </action>
+       
+         
+        
+         <action name="Registration1" class="Action.RegistrationAction" >
+            <result name="success">/MyshareDesign/Registration.jsp</result>
+        </action>  
+         
+         <action name="Registration1" class="Action.RegistrationAction" >
+            <result name="success">/MyshareDesign/Registration.jsp</result>
+        </action>  
+        
+          <!--For open AddExchange panel -->
+        
+        <action name="Registration" class="Action.RegistrationAction" method="run">
+            <result name="success">/MyshareDesign/Registration.jsp</result>
+        </action>
+        
+         <action name="login" class="Action.LoginAction" method="run">
+            <result name="success">/MyshareDesign/Admin/AdminDashboard.jsp</result>
+            <result name="admin">/MyshareDesign/Admin/AdminDashboard.jsp</result>
+            <result name="shareholder">/MyshareDesign/ShareHolder/ShareHolderPanel.jsp</result>
+            <result name="assistant">/MyshareDesign/Assistant/AssistantPanel.jsp</result>
+            <result name="error">/MyshareDesign/Login.jsp</result>
+        </action>
+        
+        <action name="login1" class="Action.LoginAction">
+            <result name="success">/MyshareDesign/Login.jsp</result>
+            
+        </action>
+        
+        <action name="allowuser" class="Action.RegistrationAction" method="execute" >
+            <result name="success">/MyshareDesign/Admin/AllowUser.jsp</result>
+        </action>
+        <action name="logout" class="Action.LoginAction" method="execute" >
+            <result name="success">/MyshareDesign/Home.jsp</result>
+        </action>
+       
+       
+        
+        
+        <!--******************* integrated project xml files******************************************-->
+        
+        
+        <!--For open AddExchange panel -->
+        <action name="addexchange" class="Action.ExchangeAction" method="execute">
+            <result name="success">/MyshareDesign/Admin/AddExchange.jsp</result>
+        </action>
+        
+         <action name="AddExchange" class="Action.ExchangeAction" method="insertRecord">
+            <result name="success">/MyshareDesign/Admin/AddExchange.jsp</result>
+            <result name="error">/MyshareDesign/Admin/AddExchange.jsp</result>
+        </action>
+        <!-- For Add Company Panel   -->
+         <action name="addcompany" class="Action.CompanyAction" method="fetchCompanyName">
+            <result name="success">/MyshareDesign/Admin/AddCompany.jsp</result>
+         </action>
+        
+         <action name="AddCompany" class="Action.CompanyAction" method="insertCompany">
+            <result name="success">/MyshareDesign/Admin/AddCompany.jsp</result>
+            <result name="error">/MyshareDesign/Admin/AddCompany.jsp</result>
+         </action>
+         
+         <action name="viewcompany" class="Action.CompanyAction" method="fetchCompanyName">
+            <result name="success">/MyshareDesign/Admin/ViewCompany.jsp</result>
+         </action>
+         
+         <action name="shareholderviewcompany" class="Action.CompanyAction" method="fetchCompanyName">
+            <result name="success">/MyshareDesign/ShareHolder/ShareholderViewCompany.jsp</result>
+         </action>
+         
+         <action name="assistantviewcompany" class="Action.CompanyAction" method="fetchCompanyName">
+            <result name="success">/MyshareDesign/Assistant/AssistantViewCompany.jsp</result>
+         </action>
+         
+         
+         <action name="viewcompanyrecord" class="Action.CompanyAction" method="fetchCompanyRecord">
+            <result name="success">/MyshareDesign/Admin/ViewCompanyRecord.jsp</result>
+         </action>
+         
+         <action name="shareholderviewcompanyrecord" class="Action.CompanyAction" method="fetchCompanyRecord">
+            <result name="success">/MyshareDesign/ShareHolder/ShareholderViewCompanyRecord.jsp</result>
+         </action>
+         
+         <action name="assistantviewcompanyrecord" class="Action.CompanyAction" method="fetchCompanyRecord">
+            <result name="success">/MyshareDesign/Assistant/AssistantViewCompanyRecord.jsp</result>
+         </action>
+         
+         <!--for company excahnge registration-->   
+             
+         <action name="companyregistration" class="Action.CompanyExchangeRegistrationAction" method="fetchCompanyProfile">
+            <result name="success">/MyshareDesign/Admin/CompanyExchangeRegistration.jsp</result>
+         </action>
+       
+        <action name="CompanyExchangeRegistration" class="Action.CompanyExchangeRegistrationAction" method="insertCompanyRegistration">
+            <result name="success">/MyshareDesign/Admin/CompanyExchangeRegistration.jsp</result>
+            <result name="input">/MyshareDesign/Admin/CompanyExchangeRegistration.jsp</result>
+            <result name="error">/MyshareDesign/Admin/CompanyExchangeRegistration.jsp</result>
+         </action>     
+         <!--for view graph -->
+          <action name="dateprice" class="Action.CompanyRecordAction" method="drawDatePriceGraph">
+            <result name="success">/MyshareDesign/Admin/DateVsPrice.jsp</result>
+         </action>
+         
+         <action name="shareholderdateprice" class="Action.CompanyRecordAction" method="drawDatePriceGraph">
+            <result name="success">/MyshareDesign/ShareHolder/ShareHolderDateVsPrice.jsp</result>
+         </action>
+         
+         <action name="assistantdateprice" class="Action.CompanyRecordAction" method="drawDatePriceGraph">
+            <result name="success">/MyshareDesign/Assistant/AssistantDateVsPrice.jsp</result>
+         </action>
+         
+         <action name="companyprofit" class="Action.CompanyAction" method="drawCompanyProfitGraph">
+            <result name="success">/MyshareDesign/Admin/CompanyProfitChart.jsp</result>
+         </action>
+         
+         <action name="shareholdercompanyprofit" class="Action.CompanyAction" method="drawCompanyProfitGraph">
+            <result name="success">/MyshareDesign/ShareHolder/ShareHolderCompanyProfitChart.jsp</result>
+         </action>
+         
+         <action name="assistantcompanyprofit" class="Action.CompanyAction" method="drawCompanyProfitGraph">
+            <result name="success">/MyshareDesign/Assistant/AssistantCompanyProfitChart.jsp</result>
+         </action>
+         
+         
+      <!--    <action name="companyregistration" class="Action.CompanyExchangeRegistrationAction" method="fetchCompanyProfile">
+            <result name="success">/MyshareDesign/Admin/CompanyExchangeRegistration.jsp</result>
+         </action>
+       
+       <action name="CompanyExchangeRegistration" class="Action.CompanyExchangeRegistrationAction" method="insertCompanyRegistration">
+            <result name="success">/MyshareDesign/Admin/CompanyExchangeRegistration.jsp</result>
+            <result name="input">/MyshareDesign/Admin/CompanyExchangeRegistration.jsp</result>
+            <result name="error">/MyshareDesign/Admin/CompanyExchangeRegistration.jsp</result>
+         </action>    -->
+       
+       
+            <!-- For Add exchange record Panel   -->
+        <action name="addexchangerecord" class="Action.ExchangeRecordAction" method="getexchangename">
+             <result name="success">/MyshareDesign/Admin/ExchangeRecord.jsp</result>
+         </action>
+         
+         <action name="assistantaddexchangerecord" class="Action.ExchangeRecordAction" method="getexchangename">
+             <result name="success">/MyshareDesign/Assistant/AssistantExchangeRecord.jsp</result>
+         </action>
+         
+         <action name="exchangerecord" class="Action.ExchangeRecordAction" method="addExchangeRecord">
+             <result name="success">/MyshareDesign/Admin/ExchangeRecord.jsp</result>
+              <result name="error">/MyshareDesign/Admin/ExchangeRecord.jsp</result>
+         </action> 
+         
+         <action name="assistantexchangerecord" class="Action.ExchangeRecordAction" method="addExchangeRecord">
+             <result name="success">/MyshareDesign/Assistant/AssistantExchangeRecord.jsp</result>
+              <result name="error">/MyshareDesign/Assistant/AssistantExchangeRecord.jsp</result>
+         </action> 
+         
+          <!--For delete Exchangerecord -->
+          
+           <action name="deleteexchangerecord" class="Action.ExchangeRecordAction" method="deleteRecord">
+             <result name="success">/MyshareDesign/Admin/ViewExchangeRecord.jsp</result>
+              <result name="error">/MyshareDesign/Admin/ViewExchangeRecord.jsp</result>
+         </action> 
+         
+         
+          <!--For view Exchange -->
+          
+           <action name="exchange" class="Action.ExchangeAction" method="viewExchange">
+             <result name="success">/MyshareDesign/Admin/ViewExchange.jsp</result>
+           </action>
+           
+           <action name="shareholderexchange" class="Action.ExchangeAction" method="viewExchange">
+             <result name="success">/MyshareDesign/ShareHolder/ShareholderViewExchange.jsp</result>
+           </action>
+           
+           <action name="assistantexchange" class="Action.ExchangeAction" method="viewExchange">
+             <result name="success">/MyshareDesign/Assistant/AssistantViewExchange.jsp</result>
+           </action>
+        
+        <action name="viewexchangerecord" class="Action.ExchangeAction" method="viewExchangeRecord">
+            <result name="success">/MyshareDesign/Admin/ViewExchangeRecord.jsp</result>
+        </action>
+        
+        <action name="shareholderviewexchangerecord" class="Action.ExchangeAction" method="viewExchangeRecord">
+            <result name="success">/MyshareDesign/ShareHolder/ShareholderViewExchangeRecord.jsp</result>
+        </action>
+        
+        <action name="assistantviewexchangerecord" class="Action.ExchangeAction" method="viewExchangeRecord">
+            <result name="success">/MyshareDesign/Assistant/AssistantViewExchangeRecord.jsp</result>
+        </action>
+
+          <!--For delete Exchange -->
+         
+        <action name="deleteexchange" class="Action.ExchangeAction" method="deleteexch">
+            <result name="success">/MyshareDesign/Admin/ViewExchange.jsp</result>
+             <result name="error">/MyshareDesign/Admin/ViewExchange.jsp</result>
+        </action>
+
+         
+          <!-- For Add source of finance Panel   -->
+         <action name="financesource" class="Action.FinanceAction" method="companyname">
+             <result name="success">/MyshareDesign/Admin/SourceOfFinance.jsp</result>
+         </action>
+         
+         <action name="viewfinancesource" class="Action.FinanceAction" method="getSourceofFinance">
+             <result name="success">/MyshareDesign/Admin/ViewSourceOfFinance.jsp</result>
+         </action>
+         
+         <action name="assistantviewfinancesource" class="Action.FinanceAction" method="getSourceofFinance">
+             <result name="success">/MyshareDesign/Assistant/AssistantViewSourceOfFinance.jsp</result>
+         </action>
+         
+         <action name="shareholderviewfinancesource" class="Action.FinanceAction" method="getSourceofFinance">
+             <result name="success">/MyshareDesign/ShareHolder/ShareholderViewSourceOfFinance.jsp</result>
+         </action>
+         
+         <action name="SourceOfFinance" class="Action.FinanceAction" method="insertfinance">
+             <result name="success">/MyshareDesign/Admin/SourceOfFinance.jsp</result>
+             <result name="error">/MyshareDesign/Admin/SourceOfFinance.jsp</result>
+         </action>
+         
+          <!-- For view finance  -->
+          <action name="viewsourceoffinance" class="Action.FinanceAction" method="drawFinanceInterestGraph">
+             <result name="success">/MyshareDesign/Admin/ViewSourceOfFinance.jsp</result>
+         </action>
+         
+         <action name="shareholderviewsourceoffinance" class="Action.FinanceAction" method="drawFinanceInterestGraph">
+             <result name="success">/MyshareDesign/ShareHolder/ShareholderViewSourceOfFinance.jsp</result>
+         </action>
+         
+         <action name="assistantviewsourceoffinance" class="Action.FinanceAction" method="drawFinanceInterestGraph">
+             <result name="success">/MyshareDesign/Assistant/AssistantViewSourceOfFinance.jsp</result>
+         </action>
+         
+         <!--for view finance graph-->
+         <action name="financeinter" class="Action.FinanceAction" method="drawFinanceInterestGraph">
+             <result name="success">/MyshareDesign/Admin/FinanceVsProfitChart.jsp</result>
+         </action>
+         
+         <action name="shareholderfinanceinter" class="Action.FinanceAction" method="drawFinanceInterestGraph">
+             <result name="success">/MyshareDesign/ShareHolder/ShareHolderFinanceVsProfitChart.jsp</result>
+         </action>
+         
+         <action name="assistantfinanceinter" class="Action.FinanceAction" method="drawFinanceInterestGraph">
+             <result name="success">/MyshareDesign/Assistant/AssistantFinanceVsProfitChart.jsp</result>
+         </action>
+         
+         
+          <!--for view borrowamount  graph-->
+         <action name="borrowamt" class="Action.FinanceAction" method="drawBorrowCompany">
+             <result name="success">/MyshareDesign/Admin/CompanyBorrowChart.jsp</result>
+         </action>
+         
+         <action name="shareholderborrowamt" class="Action.FinanceAction" method="drawBorrowCompany">
+             <result name="success">/MyshareDesign/ShareHolder/ShareHolderCompanyBorrowChart.jsp</result>
+         </action>
+         
+         <action name="assistantborrowamt" class="Action.FinanceAction" method="drawBorrowCompany">
+             <result name="success">/MyshareDesign/Assistant/AssistantCompanyBorrowChart.jsp</result>
+         </action>
+         
+          <!-- For delete sourceoffinance  -->
+          
+           <action name="deletesourceoffinance" class="Action.FinanceAction" method="deleteRecord">
+             <result name="success">/MyshareDesign/Admin/ViewSourceOfFinance.jsp</result>
+             <result name="error">/MyshareDesign/Admin/ViewSourceOfFinance.jsp</result>
+        
+         </action>
+         
+          <!-- For Add Company record Panel  -->
+         <action name="addcompanyrecord" class="Action.CompanyRecordAction" method="fetchCompanyProfile">
+             <result name="success">/MyshareDesign/Admin/AddCompanyRecord.jsp</result>
+         </action>
+         
+         <action name="assistantaddcompanyrecord" class="Action.CompanyRecordAction" method="fetchCompanyProfile">
+             <result name="success">/MyshareDesign/Assistant/AssistantCompanyRecord.jsp</result>
+         </action>
+         
+        <action name="AddCompanyRecord" class="Action.CompanyRecordAction" method="InsertCompanyRecord">
+             <result name="success">/MyshareDesign/Admin/AddCompanyRecord.jsp</result>
+             <result name="error">/MyshareDesign/Admin/AddCompanyRecord.jsp</result>
+         </action>
+         
+         <action name="AssistantCompanyRecord" class="Action.CompanyRecordAction" method="InsertCompanyRecord">
+             <result name="success">/MyshareDesign/Assistant/AssistantCompanyRecord.jsp</result>
+             <result name="error">/MyshareDesign/Assistant/AssistantCompanyRecord.jsp</result>
+         </action>
+              
+         <!--For delete company-->
+               
+
+         <action name="deletecompny" class="Action.CompanyAction" method="deleteRecord">
+             <result name="success">/MyshareDesign/Admin/ViewCompany.jsp</result>
+             <result name="error">/MyshareDesign/Admin/ViewCompany.jsp</result>
+         </action>
+         
+          <!--For delete companyrecord-->
+         <action name="deletecompnyrecord" class="Action.CompanyRecordAction" method="deleteRecord">
+             <result name="success">/MyshareDesign/Admin/ViewCompanyRecord.jsp</result>
+             <result name="error">/MyshareDesign/Admin/ViewCompanyRecord.jsp</result>
+         </action>
+         
+             <!-- For view shareholder  -->
+             <action name="viewshareholder" class="Action.LoginAction" method="viewShareHolder">
+             <result name="success">/MyshareDesign/Admin/ViewShareHolderInformation.jsp</result>
+             </action>
+            
+             <!-- For delete shareholder  -->
+            
+          <action name="deleteshareholder" class="Action.LoginAction" method="deleteshareHolderRecord">
+             <result name="success">/MyshareDesign/Admin/ViewShareHolderInformation.jsp</result>
+             <result name="error">/MyshareDesign/Admin/ViewShareHolderInformation.jsp</result>
+         </action>
+         
+          
+             
+        <!--for shareholder traansasction-->
+         <action name="shareholdertransaction" class="Action.ShareHolderTransactionAction" method="fetchDmatAndCompanyName">
+             <result name="success">/MyshareDesign/Assistant/ShareHolderTransaction.jsp</result>
+         </action>
+         
+        <action name="ShareHolderTransaction" class="Action.ShareHolderTransactionAction" method="insertShareTransaction">
+             <result name="success">/MyshareDesign/Assistant/ShareHolderTransaction.jsp</result>
+             <result name="error">/MyshareDesign/Assistant/ShareHolderTransaction.jsp</result>
+         </action>
+         
+         <action name="viewshareholdertransaction" class="Action.ShareHolderTransactionAction" method="ViewShareHolderTransaction">
+             <result name="success">/MyshareDesign/Assistant/ViewShareholderTransaction.jsp</result>
+         </action>
+         
+         <action name="ownviewshareholdertransaction" class="Action.ShareHolderTransactionAction" method="ViewShareHolderTransaction">
+             <result name="success">/MyshareDesign/ShareHolder/ShareHolderViewShareholderTransaction.jsp</result>
+         </action>
+        
+         <!-- for allow user all activate and deactivate work *************************************************-->
+         <action name="deleteRecordAction" class="Action.RegistrationAction" method="deleteRecord">
+             <result name="success">/MyshareDesign/Admin/AllowUser.jsp</result>
+             <result name="error">/MyshareDesign/Admin/AllowUser.jsp</result>
+         </action>
+         
+         <action name="updateRecordAction" class="Action.RegistrationAction" method="activateupdateRecord">
+             <result name="success">/MyshareDesign/Admin/AllowUser.jsp</result>
+             <result name="error">/MyshareDesign/Admin/AllowUser.jsp</result>
+         </action>
+        <action name="deactivateupdateRecordAction" class="Action.RegistrationAction" method="deactivateupdateRecord">
+             <result name="success">/MyshareDesign/Admin/AllowUser.jsp</result>
+             <result name="error">/MyshareDesign/Admin/AllowUser.jsp</result>
+         </action>
+        
+        
+        <!--edit Comapany ...-->
+        
+         <action name="EditCompany" class="Action.CompanyAction" method="EditCompany">
+             <result name="success">/MyshareDesign/Admin/EditCompany.jsp</result>
+            
+         </action>
+         
+        <action name="EditCompanyForm" class="Action.CompanyAction" method="EditCompanyForm">
+             <result name="success">/MyshareDesign/Admin/ViewCompany.jsp</result>
+            
+         </action>
+         
+         <!--edit Comapany Record ...-->
+         
+         <action name="editcompnyrecord" class="Action.CompanyRecordAction" method="EditCompanyRecord">
+             <result name="success">/MyshareDesign/Admin/EditCompanyRecord.jsp</result>
+            
+         </action>
+           
+        <action name="EditCompanyRecord" class="Action.CompanyRecordAction" method="EditCompanyRecordForm">
+             <result name="success">/MyshareDesign/Admin/ViewCompanyRecord.jsp</result>
+             <result name="error">/MyshareDesign/Admin/ViewCompanyRecord.jsp</result>
+            
+         </action>
+        
+        
+    </package>
+</struts>

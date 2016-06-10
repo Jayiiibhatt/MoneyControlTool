@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+   PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Model.ExchangeRecordModel" table="exchangerecord">
+    <id name="exchangerecid" column="exchangerecid" type="java.lang.Integer">
+        <generator class="assigned"></generator>
+    </id>
+     <property name="exchangename" column="exname" type="java.lang.String" ></property>
+     <property name="openingindex" column="openingindex" type="java.lang.Integer"></property>
+     <property name="closingindex" column="closingindex" type="java.lang.Integer"></property>
+     <property name="date" column="date" type="java.lang.String"></property>
+     <property name="mychange" column="mychange" type="java.lang.Double"></property>
+    <!-- <one-to-one name="exchangemod" class="Model.ExchangeModel" cascade="all"/>-->
+    </class>
+</hibernate-mapping>
+

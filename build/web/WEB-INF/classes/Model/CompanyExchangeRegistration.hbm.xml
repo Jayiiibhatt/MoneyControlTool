@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+   PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Model.CompanyExchangeRegistration" table="companyregister">
+        <composite-id name="id" class="Model.CompanyExchange">
+            <key-property name="tinnumber" type="java.lang.Integer">
+                <column name="tinnumber" />
+            </key-property>
+            <key-property name="exname" type="java.lang.String">
+                <column name="exname" />
+            </key-property>
+        </composite-id>
+        
+        <property name="ipoprice" column="ipoprice" type="java.lang.Double"/>
+        <property name="registerdate" column="registerdate" type="java.lang.String"/>
+        
+        <many-to-one name="exchangemodel" class="Model.ExchangeModel" update="false" insert="false" fetch="select">
+            <column name="exname" not-null="true" />
+        </many-to-one>
+        <many-to-one name="companymodel" class="Model.CompanyModel" update="false" insert="false" fetch="select">
+            <column name="tinnumber" not-null="true"/>
+        </many-to-one>
+        
+        
+    </class>
+    
+       
+</hibernate-mapping>

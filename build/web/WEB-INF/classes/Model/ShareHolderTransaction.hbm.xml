@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+   PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+   
+<hibernate-mapping>
+       <class name="Model.ShareHolderTransaction" table="shareholdertransaction">
+        <composite-id name="id" class="Model.ShareHolderTransactionId">
+            <key-property name="shareholder_id" type="java.lang.Integer">
+              <column name="shareholder_id" />
+            </key-property>
+           <key-property name="tinnumber" type="java.lang.Integer">
+              <column name="tinnumber" />
+            </key-property>
+            
+        </composite-id>
+        
+        <property name="transactionmode" column="transactionmode" type="java.lang.String"/>
+        <property name="date" column="date" type="java.lang.String"/>
+        <property name="numberofissue" column="numberofissue" type="java.lang.Integer"/>
+        <property name="currentvalue" column="currentvalue" type="java.lang.Integer"/>
+        <property name="netvalue" column="netvalue" type="java.lang.Integer"/>
+        
+        <many-to-one name="company" class="Model.CompanyModel" update="false" insert="false" fetch="select">
+           <column name="tinnumber" not-null="true" />
+        </many-to-one>
+         <many-to-one name="share" class="Model.ShareHolder" update="false" insert="false" fetch="select">
+           <column name="shareholder_id" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

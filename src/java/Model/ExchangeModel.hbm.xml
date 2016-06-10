@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+   PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Model.ExchangeModel" table="exchangemaster">
+    <id name="exname" column="exname" type="java.lang.String">
+        <generator class="assigned">
+            
+        </generator>
+    </id>
+     <property name="country" column="country" type="java.lang.String"></property>
+     <property name="city" column="city" type="java.lang.String"></property>
+     <property name="state" column="state" type="java.lang.String"></property>
+     <property name="street" column="street" type="java.lang.String"></property>
+     <property name="district" column="district" type="java.lang.String"></property>
+     <property name="pinno" column="pinnumber" type="java.lang.Integer"></property>
+     
+     <set name="exrecmodel" table="exchangerecord" cascade="all" inverse="false">
+         <key >
+             <column name="exchangename"/>
+         </key>
+         <one-to-many class="Model.ExchangeRecordModel"/>
+     </set>
+     
+     <set name="companyexchangeregistration" table="companyregister" inverse="true" lazy="true" fetch="select">
+         <key >
+             <column name="exname" not-null="true"/>
+         </key>
+         <one-to-many class="Model.CompanyExchangeRegistration"/>
+     </set>
+   
+    </class>
+</hibernate-mapping>

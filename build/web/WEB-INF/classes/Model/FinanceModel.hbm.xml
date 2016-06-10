@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+   PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Model.FinanceModel" table="finance" discriminator-value="sourceoffinance">
+    <id name="sfname" column="sfname" type="java.lang.String">
+        <generator class="assigned">
+            
+        </generator>
+    </id>
+    
+     <discriminator column="typename" type="java.lang.String"></discriminator>
+    
+     <property name="compname" column="companyname" type="java.lang.String"></property>
+     <property name="country" column="country" type="java.lang.String"></property>
+     <property name="city" column="city" type="java.lang.String"></property>
+     <property name="state" column="state" type="java.lang.String"></property>
+     <property name="street" column="street" type="java.lang.String"></property>
+     <property name="district" column="district" type="java.lang.String"></property>
+     <property name="date" column="date" type="java.lang.String"></property>
+     <property name="pinnumber" column="pinnumber" type="java.lang.Integer"></property>
+     <property name="interestrate" column="interestrate" type="java.lang.Integer"></property>
+     <property name="borrowamount" column="borrowamount" type="java.lang.Integer"></property>
+     <property name="duration" column="duration" type="java.lang.Integer"></property>
+     <property name="type" column="financialinstitutetype" type="java.lang.String"></property>
+     
+     <subclass name="Model.Bank" discriminator-value="bank">
+     <property name="branchcode" column="branchcode" type="java.lang.String"></property>
+     </subclass>
+     
+     <subclass name="Model.FinancialInstitution" discriminator-value="financialinstitute">
+         <property name="financeid" column="financeid" type="java.lang.String"></property>
+     </subclass>
+      </class>
+</hibernate-mapping>
